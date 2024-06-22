@@ -1,0 +1,21 @@
+﻿@using Autorizador.ULF.Cliente.Pages.Exception;
+
+<CascadingAuthenticationState>
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData"
+            DefaultLayout="@typeof(MainLayout)" >
+            <Authorizing>
+                <text>Aguarde, pf, estamos autorizando o usuário.</text>
+            </Authorizing>
+        </AuthorizeRouteView>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <CustomNotFound />
+        </LayoutView>
+    </NotFound>
+</Router>
+</CascadingAuthenticationState>

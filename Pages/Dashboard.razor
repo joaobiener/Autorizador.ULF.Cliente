@@ -1,0 +1,42 @@
+﻿@page "/"
+@page "/index"
+@page "/dashboard"
+@using Autorizador.ULF.Cliente.Components
+@using Autorizador.ULF.Cliente.Helper
+@using Autorizador.ULF.Cliente.Model
+@using Microsoft.AspNetCore.Authorization
+
+
+
+<TitlePages TituloPagina="Menu Snipper" IconString="@Icons.Material.Filled.AdsClick" CorTitulo="Color.Inherit" />
+
+<AuthorizeView Roles="Administrator,SnipperAdmin">
+    <Authorized>
+       
+       
+     </Authorized>
+     <NotAuthorized>
+         <MudGrid>
+            <MudItem xs="6">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudCard Elevation="5">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h6">Click para fazer Login</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.AdsClick" Href="login" Size="Size.Large" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudText>Motor de regras para Autorização de Guias.</MudText>
+                            <MudText Typo="Typo.body2">Não está autenticado no sistema.</MudText>
+                        </MudCardContent>
+                    </MudCard>
+                           
+                </MudPaper>
+
+            </MudItem>
+        </MudGrid>
+     </NotAuthorized>
+</AuthorizeView> 
