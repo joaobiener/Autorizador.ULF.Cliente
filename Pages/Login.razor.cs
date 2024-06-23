@@ -77,11 +77,7 @@ namespace Autorizador.ULF.Cliente.Pages
         }
     
 
-		private async Task FocusAndStyleElement()
-		{
-          //  await _jsModule.InvokeVoidAsync("focusInputComponent", "password");
-            await _jsModule.InvokeVoidAsync("focusInputComponent", "username");
-        }
+	
 
         private void OnValidSubmit(EditContext editFormContext)
 		{

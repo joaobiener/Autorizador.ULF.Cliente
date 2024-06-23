@@ -19,28 +19,28 @@
                                
                             </MudCardHeader>
                         <MudCardContent>
-                            <MudTextField @bind-Value="_userForAuthentication.UserName"
-                                                For="@(() =>_userForAuthentication.UserName)"
-                                                AutoFocus="true"
-							                    Label="Usuário"
-                                                Variant="Variant.Outlined"
-							                    RequiredError="Usuário é obrigatória!"
-                                                id="username"/>
+                              <MudFocusTrap  DefaultFocus="DefaultFocus.FirstChild">
+                                <MudTextField @bind-Value="_userForAuthentication.UserName"
+                                                    For="@(() =>_userForAuthentication.UserName)"
+                                                    AutoFocus="true"
+							                        Label="Usuário"
+                                                    Variant="Variant.Outlined"
+							                        RequiredError="Usuário é obrigatória!"
+                                                    id="username"/>
 
 
-                            <MudTextField @bind-Value="_userForAuthentication.Password"
-                                                For="@(() =>_userForAuthentication.Password)"
-                                                Label="Senha" 
-                                                Variant="Variant.Outlined"
-                                                InputType="@PasswordInput" 
-                                                Adornment="Adornment.End" 
-                                                AdornmentIcon="@PasswordInputIcon" 
-                                                OnAdornmentClick="ButtonTestclick" 
-                                                AdornmentAriaLabel="Mostrar a Senha"
-                                                AdornmentColor="Color.Success"
-                                                RequiredError="Senha é obrigatória!"
-                                                id="password" />
-
+                                <MudTextField @bind-Value="_userForAuthentication.Password"
+                                                    For="@(() =>_userForAuthentication.Password)"
+                                                    Label="Senha" 
+                                                    Variant="Variant.Outlined"
+                                                    InputType="@PasswordInput" 
+                                                    Adornment="Adornment.End" 
+                                                    AdornmentIcon="@PasswordInputIcon" 
+                                                    OnAdornmentClick="ButtonTestclick" 
+                                                    AdornmentAriaLabel="Mostrar a Senha"
+                                                    AdornmentColor="Color.Success"
+                                                    RequiredError="Senha é obrigatória!"/>
+                               </MudFocusTrap>
 				        </MudCardContent>
                             
 				        <MudCardActions>
